@@ -1,4 +1,4 @@
-choices = ["stone", "paper", "scissor"];
+choices = ["Stone", "Paper", "Scissor"];
 let comp_score = 0;
 let human_score = 0;
 document.getElementById("start").addEventListener("click", startGame);
@@ -12,7 +12,7 @@ function startGame() {
   b.addEventListener("click", reset);
   let score = document.getElementById("scorecard");
   if (score.hasChildNodes()) score.removeChild(score.children[0]);
-  const a = ["human", "comp"];
+  const a = ["Human", "Comp"];
   for (let e = 0; e < 2; e++) {
     let h = document.createElement("div");
     h.classList.add("display");
@@ -35,12 +35,12 @@ function update_score(evt) {
   let comp = choices[Math.floor(Math.random() * choices.length)];
   let text = `${id}  VS  ${comp}`;
   document.getElementById("match").innerText = text;
-  if (comp == "scissor" && id == "stone") human_score += 1;
-  else if (comp == "paper" && id == "stone") comp_score += 1;
-  else if (comp == "scissor" && id == "paper") comp_score += 1;
-  else if (comp == "stone" && id == "paper") human_score += 1;
-  else if (comp == "paper" && id == "scissor") human_score += 1;
-  else if (comp == "stone" && id == "scissor") comp_score += 1;
+  if (comp == "Scissor" && id == "Stone") human_score += 1;
+  else if (comp == "Paper" && id == "Stone") comp_score += 1;
+  else if (comp == "Scissor" && id == "Paper") comp_score += 1;
+  else if (comp == "Stone" && id == "Paper") human_score += 1;
+  else if (comp == "Paper" && id == "Scissor") human_score += 1;
+  else if (comp == "Stone" && id == "Scissor") comp_score += 1;
   document.getElementById("human").innerText = human_score;
   document.getElementById("comp").innerText = comp_score;
   if (comp_score == 3 || human_score == 3) {
@@ -49,9 +49,9 @@ function update_score(evt) {
     let b = document.getElementById("reset");
     b.style.background = "green";
     b.innerText = "Start New Game";
-    document.getElementById("stone").removeEventListener("click", update_score);
-    document.getElementById("paper").removeEventListener("click", update_score);
-    document.getElementById("scissor").removeEventListener("click", update_score);
+    document.getElementById("Stone").removeEventListener("click", update_score);
+    document.getElementById("Paper").removeEventListener("click", update_score);
+    document.getElementById("Scissor").removeEventListener("click", update_score);
     return;
   }
 }
@@ -65,7 +65,7 @@ function reset() {
   document.getElementById("match").innerText = "";
   document.getElementById("human").innerText = human_score;
   document.getElementById("comp").innerText = comp_score;
-  document.getElementById("stone").addEventListener("click", update_score);
-  document.getElementById("paper").addEventListener("click", update_score);
-  document.getElementById("scissor").addEventListener("click", update_score);
+  document.getElementById("Stone").addEventListener("click", update_score);
+  document.getElementById("Paper").addEventListener("click", update_score);
+  document.getElementById("Scissor").addEventListener("click", update_score);
 }
