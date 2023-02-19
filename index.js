@@ -41,8 +41,8 @@ function update_score(evt) {
   else if (comp == "Stone" && id == "Paper") human_score += 1;
   else if (comp == "Paper" && id == "Scissor") human_score += 1;
   else if (comp == "Stone" && id == "Scissor") comp_score += 1;
-  document.getElementById("human").innerText = human_score;
-  document.getElementById("comp").innerText = comp_score;
+  document.getElementById("Human").innerText = human_score;
+  document.getElementById("Comp").innerText = comp_score;
   if (comp_score == 3 || human_score == 3) {
     document.getElementById("final").innerText =
       comp_score > human_score ? "You lose" : "You win";
@@ -63,8 +63,8 @@ function reset() {
   b.innerText = "Reset";
   document.getElementById("final").innerText = "";
   document.getElementById("match").innerText = "";
-  document.getElementById("human").innerText = human_score;
-  document.getElementById("comp").innerText = comp_score;
+  document.getElementById("Human").innerText = human_score;
+  document.getElementById("Comp").innerText = comp_score;
   document.getElementById("Stone").addEventListener("click", update_score);
   document.getElementById("Paper").addEventListener("click", update_score);
   document.getElementById("Scissor").addEventListener("click", update_score);
