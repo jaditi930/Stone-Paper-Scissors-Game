@@ -8,15 +8,6 @@
     justify-content: space-evenly;
     margin:30px;
 }
-@media only screen and (max-width:750px) {
-   .container{
-    flex-direction: column;
-    align-items: center;
-   }
-   .btn{
-    margin-bottom: 20px;
-   } 
-}
 h2{
     font-size: 2rem;
 }
@@ -57,3 +48,26 @@ h2{
      display:inline-block;
      width:48%;
 }
+.bt{
+    background-color:green;
+    width:400px;
+}
+@media only screen and (max-width:750px) {
+    .container{
+     /* flex-direction: column; */
+     margin-top:100px;
+     align-items: center;
+    }
+    .bt{
+        margin-top: 25px;
+        width:250px;
+    }
+    .btn{
+     width:100px;
+     height:100px;
+     margin-bottom: 20px;
+    } 
+    h1{
+     font-size: 3rem;
+    }
+ }
